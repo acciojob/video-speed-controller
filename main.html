@@ -1,36 +1,68 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
-	<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <title>Scoped CSS Variables and JS</title>
 </head>
-
 <body>
-	<!-- the entire body must be written by student -->
-	<div class="flex-box">
+  <h2>Update CSS Variables with <span class='hl'>JS</span></h2>
 
-		<input id="block_id" placeholder="Enter block id"/>
-  <input id="colour_id" placeholder="Enter colour Hexcode" />
-  <button id="change_button"  >Change</button>
-  <button id="reset_button">Reset</button>
-</div>
-  <div class="grid-container">
-    <div class="grid-item" id="1">1</div>
-    <div class="grid-item" id="2">2</div>
-    <div class="grid-item" id="3">3</div>
-    <div class="grid-item" id="4">4</div>
-    <div class="grid-item" id="5">5</div>
-    <div class="grid-item" id="6">6</div>
-    <div class="grid-item" id="7">7</div>
-    <div class="grid-item" id="8">8</div>
-    <div class="grid-item" id="9">9</div>
+  <div class="controls">
+    <label for="spacing">Spacing:</label>
+    <input id="spacing" type="range" name="spacing" min="10" max="200" value="10" data-sizing="px">
+
+    <label for="blur">Blur:</label>
+    <input class="blur" id="blur" type="range" name="blur" min="0" max="25" value="5" data-sizing="px">
+
+    <label for="base">Base Color</label>
+    <input id="base" type="color" name="base" value="#ffc600">
   </div>
 
+  <img src="https://source.unsplash.com/7bwQXzbF6KE/800x500">
 
-    <script type="text/javascript" src="./script.js">
-</script>
+  <style>
+    :root {
+      --base: #ffc600;
+      --spacing: 10px;
+      --blur: 10px;
+    }
+
+    img {
+      padding: var(--spacing);
+      background: var(--base);
+      filter: blur(var(--blur));
+    }
+
+    .hl {
+      color: var(--base);
+    }
+
+    /*
+      misc styles, nothing to do with CSS variables
+    */
+
+    body {
+      text-align: center;
+      background: #193549;
+      color: white;
+      font-family: 'helvetica neue', sans-serif;
+      font-weight: 100;
+      font-size: 50px;
+    }
+
+    .controls {
+      margin-bottom: 50px;
+    }
+
+    input {
+      width: 100px;
+    }
+  </style>
+
+  <script src="./scripts.js">
+    
+  </script>
+
 
 </body>
-
 </html>
