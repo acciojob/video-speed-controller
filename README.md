@@ -14,3 +14,4 @@ You need to add logic for:
 - `« 10s` button to go 10 seconds back
 - `25s »` button to skip 25 seconds
 
+The video used has to be src="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4".
